@@ -1,0 +1,24 @@
+# Secrets - never commit these
+.env
+
+# Virtual environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime-generated data (created automatically when the app runs)
+workflow_automation.db
+workflow_actions.log
+workflow_sheet.csv
+server.log
+backend.log
+*.log
+
+# OS / editor cruft
+.DS_Store
+.vscode/
+.idea/
