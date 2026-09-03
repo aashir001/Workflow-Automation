@@ -1,24 +1,26 @@
-# Secrets - never commit these
+# Secrets
 .env
 
-# Virtual environment
+# Python
 venv/
 env/
-
-# Python
 __pycache__/
 *.pyc
-*.pyo
 
-# Runtime-generated data (created automatically when the app runs)
+# Runtime-generated data
 workflow_automation.db
 workflow_actions.log
 workflow_sheet.csv
 server.log
 backend.log
-*.log
 
-# OS / editor cruft
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/vite.log
+frontend/.vite/
+
+# OS / editor
 .DS_Store
 .vscode/
 .idea/

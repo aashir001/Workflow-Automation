@@ -1,9 +1,7 @@
 fastapi>=0.115.6
 uvicorn
 sqlalchemy
-streamlit
 requests
-pandas
 pydantic>=2.10.3
 groq
 cryptography
@@ -12,11 +10,3 @@ gspread
 google-auth
 google-api-python-client
 python-dotenv
-
-# Optional - only needed if you use Anthropic or OpenAI instead of Groq
-# for the LLM-based natural-language workflow parsing (app/nl_builder.py).
-# Set GROQ_API_KEY (already required above) to use Groq; without any
-# key set, the natural-language builder still works via a deterministic
-# keyword-based fallback parser.
-# anthropic
-# openai

@@ -1,9 +1,5 @@
-"""Sheet connector - genuinely writes rows to a local CSV file (not
-simulated - this one has a real, observable side effect on disk)."""
-
 import csv
 import os
-
 from app.connectors.base import BaseConnector
 
 SHEET_FILE = "workflow_sheet.csv"
@@ -14,12 +10,8 @@ class SheetConnector(BaseConnector):
     actions = {"append_row": "Append a row of data to a local CSV file"}
 
     def execute(self, action: str, params: dict, working_data: dict) -> str:
-        if action != "append_row":
-            raise ValueError(f"Unknown action '{action}' for connector '{self.name}'")
-
         fields = params.get("fields") or list(working_data.keys())
         row = [str(working_data.get(f, "")) for f in fields]
-
         write_header = not os.path.exists(SHEET_FILE)
         with open(SHEET_FILE, "a", newline="") as f:
             writer = csv.writer(f)
